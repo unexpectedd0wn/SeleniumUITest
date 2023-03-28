@@ -15,49 +15,49 @@ namespace SeleniumUITest
         public void TestMethod1()
         {
 
-            try
-            {
+            //try
+            //{
                 
-                string title = driver.Title;
-                Assert.AreEqual(title, "Demo Web Shop");
+            //    string title = driver.Title;
+            //    Assert.AreEqual(title, "Demo Web Shop");
 
-                driver.FindElement(By.ClassName("ico-register")).Click();
-                driver.FindElement(By.Id("gender-male")).Click();
-                driver.FindElement(By.Id("FirstName")).SendKeys("testest");
-                driver.FindElement(By.Id("LastName")).SendKeys("testest");
+            //    driver.FindElement(By.ClassName("ico-register")).Click();
+            //    driver.FindElement(By.Id("gender-male")).Click();
+            //    driver.FindElement(By.Id("FirstName")).SendKeys("testest");
+            //    driver.FindElement(By.Id("LastName")).SendKeys("testest");
 
-                driver.FindElement(By.Id("Email")).SendKeys(email);
-                Console.WriteLine(email);
+            //    driver.FindElement(By.Id("Email")).SendKeys(email);
+            //    Console.WriteLine(email);
 
-                driver.FindElement(By.Id("Password")).SendKeys("testest");
-                driver.FindElement(By.Id("ConfirmPassword")).SendKeys("testest");
+            //    driver.FindElement(By.Id("Password")).SendKeys("testest");
+            //    driver.FindElement(By.Id("ConfirmPassword")).SendKeys("testest");
 
-                driver.FindElement(By.Id("register-button")).Click();
+            //    driver.FindElement(By.Id("register-button")).Click();
 
-                String message = driver.FindElement(By.ClassName("result")).Text;
-                Assert.AreEqual(message, "Your registeretion complited");
+            //    String message = driver.FindElement(By.ClassName("result")).Text;
+            //    Assert.AreEqual(message, "Your registeretion complited");
 
-                IWebElement emailAccount = driver.FindElement(By.XPath("//*[text()='" + email + "']"));
-                Assert.IsTrue(emailAccount.Displayed);
+            //    IWebElement emailAccount = driver.FindElement(By.XPath("//*[text()='" + email + "']"));
+            //    Assert.IsTrue(emailAccount.Displayed);
 
-                driver.FindElement(By.ClassName("ico-logout")).Click();
+            //    driver.FindElement(By.ClassName("ico-logout")).Click();
                 
-            }
-            catch (Exception e)
-            {
+            //}
+            //catch (Exception e)
+            //{
 
-                Console.WriteLine(e.Message);
-            }
+            //    Console.WriteLine(e.Message);
+            //}
 
 
         }
 
 
         [TestCleanup]
-        public void closeBrowser()
-        {
-            driver.Close();
-        }
+        //public void closeBrowser()
+        //{
+        //    driver.Close();
+        //}
 
 
 

@@ -25,5 +25,11 @@ namespace SeleniumUITest.BasePage
             driver.Manage().Window.Maximize();
 
         }
+
+        [TestCleanup]
+        public void CleanUp()
+        {
+            driver.Close();
+        }
     }
 }

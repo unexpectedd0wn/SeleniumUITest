@@ -17,11 +17,24 @@ namespace SeleniumUITest.Pages
             HomePage.driver = driver;
         }
 
+        public string getTitle()
+        {
+            return driver.Title;
+        }
         /*
          * Page objects - for webelements
          */
 
         public static readonly By registerLink = By.ClassName("ico-register");
         public static readonly By loginLink = By.ClassName("ico-login");
+
+        public void clickRegisterLink()
+        {
+            driver.FindElement(registerLink).Click();
+        }
+        public void clickLoginLink()
+        {
+            driver.FindElement(loginLink).Click();
+        }
     }
 }
