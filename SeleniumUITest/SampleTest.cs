@@ -9,19 +9,7 @@ namespace SeleniumUITest
     public class SampleTest
     {
         string email = GenerateRandomEmail();
-        WebDriver driver;
-
-        [TestInitialize]
-        public void Init()
-        {
-            //Create an instance for webdriver 
-            driver = new ChromeDriver();
-            //navigate
-            driver.Navigate().GoToUrl("https://demowebshop.tricentis.com/");
-            //Maximaze browser window
-            driver.Manage().Window.Maximize();
-
-        }
+        
 
         [TestMethod]
         public void TestMethod1()
