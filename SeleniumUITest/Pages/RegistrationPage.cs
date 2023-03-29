@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using SeleniumUITest.WebDriverExtentions;
 
 namespace SeleniumUITest.Pages
 {
@@ -44,55 +45,57 @@ namespace SeleniumUITest.Pages
          */
         public void selectGender()
         { 
-            driver.FindElement(genderMale).Click();
+            
+            driver.Click(genderMale);
         }
 
         public void EnterFirstName(string value)
         {
-            driver.FindElement(firstName).SendKeys(value);
+            
+            driver.EnterText(firstName,value);
         }
         public void EnterLastName(string value)
         {
-            driver.FindElement(lastName).SendKeys(value);
+            driver.EnterText(lastName, value);
         }
 
         public void EnterEmail(string value)
         {
-            driver.FindElement(email).SendKeys(value);
+            driver.EnterText(email,value);
         }
 
         public void EnterPassword(string value)
         {
-            driver.FindElement(password).SendKeys(value);
+            driver.EnterText(password, value);
         }
 
         public void ConfirmPassword(string value)
         {
-            driver.FindElement(confirmPassword).SendKeys(value);
+            driver.EnterText(confirmPassword, value);
         }
 
         public void clickRegisterButton()
         {
-            driver.FindElement(registerButton).Click();
+            driver.Click(registerButton);
         }
 
         public string GetSuccessfullMessage()
         {
-            return driver.FindElement(result).Text;
+           return driver.getText(result);
         }
         public string GetValidationMessagePaaswordIsShort()
         {
-            return driver.FindElement(passwordMessage).Text;
+            return driver.getText(passwordMessage); ;
         }
 
         public bool IsEmailAccountDisplayed(string email)
         {
-           return driver.FindElement(By.XPath("//*[text()='" + email + "']")).Displayed;
+           return driver.getTextWithValueDisplayed(email);
         }
 
         public void clickLogout()
         {
-            driver.FindElement(logout).Click();
+            driver.Click(logout);
         }
     }
 }

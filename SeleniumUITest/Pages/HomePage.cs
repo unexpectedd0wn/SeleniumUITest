@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using SeleniumUITest.WebDriverExtentions;
 
 namespace SeleniumUITest.Pages
 {
@@ -30,7 +31,8 @@ namespace SeleniumUITest.Pages
 
         public void clickRegisterLink()
         {
-            driver.FindElement(registerLink).Click();
+            driver.Click(registerLink);
+
         }
         public void clickLoginLink()
         {

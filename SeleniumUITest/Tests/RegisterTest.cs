@@ -11,7 +11,7 @@ namespace SeleniumUITest.Tests
         public HomePage homePage;
         public RegistrationPage registrationPage;
         string email = Support.Support.GenerateRandomEmail();
-
+        [TestCategory("Smoke")]
         [TestMethod]
         public void VerifyRegisterFunctionalityValidData()
         {
@@ -34,7 +34,7 @@ namespace SeleniumUITest.Tests
             registrationPage.clickLogout();
 
         }
-
+        [TestCategory("Smoke")]
         [TestMethod]
         public void VerifyRegisterFunctionalityPasswordIsToShort()
         {
@@ -56,5 +56,13 @@ namespace SeleniumUITest.Tests
 
 
         }
+
+        [TestCategory("UnitTest")]
+        [TestMethod]
+        public void VerifyAppLogDisplayed()
+        { 
+            
+        }
+
     }
 }
