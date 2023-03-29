@@ -30,6 +30,11 @@ namespace SeleniumUITest.BasePage
 
         }
 
+        //public static string getTitle()
+        //{ 
+            
+        //}
+
         [TestCleanup]
         public void CleanUp()
         {

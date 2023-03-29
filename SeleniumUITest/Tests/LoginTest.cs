@@ -8,6 +8,7 @@ namespace SeleniumUITest.Tests
     public class LoginTest : BaseClass
     {
         HomePage homePage;
+        LoginPage loginPage;
         
         [TestCategory("SmokeTest")]
         [TestMethod]
@@ -15,8 +16,13 @@ namespace SeleniumUITest.Tests
         {
 
             homePage = new HomePage(driver);
-
-
+            loginPage = new LoginPage(driver);  
+            homePage.clickLoginLink();
+            string title = homePage.getTitle();
+            Assert.AreEqual(title, "Demo Web Shop. Login");
+            loginPage.EnterEmailAddress(Support.Support.GenerateRandomEmail());
+            loginPage.EnterPassword("test");
+            loginPage.ClickLogInButton();
         }
     }
 }

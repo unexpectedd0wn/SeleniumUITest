@@ -36,7 +36,7 @@ namespace SeleniumUITest.Pages
         }
         public void clickLoginLink()
         {
-            driver.FindElement(loginLink).Click();
+            driver.Click(loginLink);
         }
     }
 }
