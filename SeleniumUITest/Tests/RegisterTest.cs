@@ -34,5 +34,27 @@ namespace SeleniumUITest.Tests
             registrationPage.clickLogout();
 
         }
+
+        [TestMethod]
+        public void VerifyRegisterFunctionalityPasswordIsToShort()
+        {
+            homePage = new HomePage(driver);
+            registrationPage = new RegistrationPage(driver);
+            Assert.AreEqual(homePage.getTitle(), "Demo Web Shop");
+            homePage.clickRegisterLink();
+            Assert.AreEqual(registrationPage.getTitle(), "Demo Web Shop. Register");
+            registrationPage.selectGender();
+            registrationPage.EnterFirstName("test");
+            registrationPage.EnterLastName("test");
+            registrationPage.EnterEmail(email);
+            registrationPage.EnterPassword("test");
+            registrationPage.ConfirmPassword("");
+            string passwordMessage = registrationPage.GetValidationMessagePaaswordIsShort();
+            Assert.AreEqual(passwordMessage, "The password should have at least 6 characters.");
+
+
+
+
+        }
     }
 }

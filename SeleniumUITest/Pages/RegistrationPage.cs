@@ -36,6 +36,7 @@ namespace SeleniumUITest.Pages
         public static readonly By result = By.ClassName("result");
         public static readonly By status = By.ClassName("status");
         public static readonly By logout = By.ClassName("ico-logout");
+        public static readonly By passwordMessage = By.CssSelector(".field-validation-error > span");
 
         /*
          * page Methods
@@ -79,7 +80,10 @@ namespace SeleniumUITest.Pages
         {
             return driver.FindElement(result).Text;
         }
-
+        public string GetValidationMessagePaaswordIsShort()
+        {
+            return driver.FindElement(passwordMessage).Text;
+        }
 
         public bool IsEmailAccountDisplayed(string email)
         {
